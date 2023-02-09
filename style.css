@@ -1,0 +1,618 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+/* RESET */
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/* DEFAULT CONFIG */
+html,
+body {
+    height: 100%;
+    width: 100%;
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 80%;
+    text-align: center;
+    margin: 25px 0;
+    padding: 20px 20px;
+}
+
+/* HEADER */
+.header-section {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 50px 0px;
+    z-index: 10;
+}
+
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+.navigation {
+    text-align: center;
+    padding: 25px;
+
+}
+
+nav h1 {
+    padding-top: 15px;
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+.menu-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.menu-container ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-container li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.menu-container a {
+    padding: 15px;
+}
+
+.menu .menu-item a:hover {
+    cursor: hand;
+    color: red;
+}
+
+
+/* HERO */
+.hero-section {
+    width: 100%;
+    height: auto;
+}
+
+.hero-container img {
+    display: block;
+    margin: auto;
+    width: 100%;
+    max-height: auto;
+    background-position: center;
+
+}
+
+.date-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.date-container {
+    width: 80%;
+    margin: 5px 0;
+    padding: 5px 5px;
+}
+
+.date-section .date-container .date {
+    text-align: right;
+    font-family: monospace;
+    font-size: 12px;
+    font-style: italic;
+}
+
+
+/* NEWS SECTION */
+
+.news-section .news-intro h2 {
+    margin-top: 20px;
+    padding: 20px;
+    z-index: -10;
+}
+
+.news-section .news-intro p {
+    font-size: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* NEWS ARTICLE */
+
+.articles {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.news-article {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 25px 15px;
+    padding: 25px;
+}
+
+.news-article:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 0.5s;
+}
+
+.news-article img {
+    max-width: 100%;
+    background-position: center;
+}
+
+.news-article h3 {
+    padding: 20px;
+    font-weight: 600;
+}
+
+.news-article p {
+    padding: 20px;
+}
+
+/* BLOGG */
+
+.blog-into h2 {
+    /*     font-weight: 500;
+ */
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.blog-intro p {
+    font-size: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.blog-posts {
+    /*    display: flex;
+    justify-content: center;
+    align-items: center; */
+    max-width: 100%;
+}
+
+.blog-post {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    max-width: 100%;
+    margin: 25px 0;
+    padding: 25px;
+    text-align: left;
+}
+
+.blog-post:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 0.5s;
+}
+
+.blog-post img {
+    max-width: 40%;
+}
+
+.blog-post article {
+    padding: 15px 50px;
+}
+
+.blog-post h3 {
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.blog-post .signee {
+    margin-top: 20px;
+    font-style: italic;
+    font-weight: 400;
+    text-align: end;
+}
+
+/* VÅRA HUNDAR */
+
+.hundar-hero img {
+    object-fit: cover;
+    object-position: top;
+}
+
+.hundar {
+    max-width: 100%;
+}
+
+.hund {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    max-width: 100%;
+    margin: 25px 0;
+    padding: 25px;
+}
+
+.hund-text {
+    text-align: left;
+    padding: 25px;
+}
+
+.hund-text h3 {
+    margin-bottom: 20px;
+}
+
+
+.hund article {
+    display: grid;
+    grid-template-columns: 60% auto;
+    gap: 25px;
+    align-items: start;
+}
+
+.hund:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+    transition: 0.5s;
+}
+
+.hund-lista {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.hund-lista li {
+    margin: 0px;
+    padding-top: 5px;
+}
+
+.hund-lista ul {
+    padding: 0;
+    margin: 0;
+}
+
+.hund img {
+    max-width: 100%;
+}
+
+
+/* OM OSS */
+
+.about{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    max-width: 100%;
+    margin: 25px 0;
+    padding: 25px;
+}
+
+.about-info{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.about-txt{
+    text-align: left;
+    padding: 25px;
+}
+
+.about-txt h3 {
+    margin-bottom: 20px;
+}
+
+.about-info img {
+    max-width: 50%;
+}
+
+.contact{
+    max-width: 100%;
+    margin: 25px 0;
+    padding: 25px;
+    line-height: 2;
+}
+
+.contact .info h4 {
+    margin-bottom: 20px;
+}
+
+.info {
+    text-align: left;
+    margin: 50px 25px;
+
+}
+
+.info .name{
+    font-weight: 600;
+}
+
+.about h4{
+    text-align: left;
+}
+
+#snabbfakta{
+    max-width: 100%;
+    padding-left: 25px;
+}
+
+.table{
+    margin: 0px 0px;
+}
+
+th{
+    text-align: left;
+    width: 125px;
+    border: #000 solid 1px;
+}
+
+tbody{
+    text-align: left;
+    border: #000 solid 1px;
+}
+td{
+    border: #000 solid 1px;
+}
+
+.snabbfakta table {
+    text-align: left;
+}
+
+
+.form {
+    background-color: #cfcfcf;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 25px;
+    text-align: left;
+}
+.form-info{
+    font-style: italic;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.form label{
+    margin: 0px 0px;
+    padding: 0px 0px;
+    font-weight: 500;
+}
+
+.form input{
+    width: 50%;
+    height: 30px;
+    color: #cfcfcf;
+    border-radius: 5px;
+    border: none;
+    padding-left:10px ;
+    margin-bottom: 15px;
+}
+
+.form #button{
+    height: 50px;
+    width: 100px;
+    background-color: #5f1eb4;
+}
+.form #button:hover{
+    cursor: pointer;
+    transform: scale(1.1) ;
+    background-color: #47138c;
+}
+
+/* VALPKULLAR */
+
+.valp-info h2 {
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.valp-info p {
+    font-size: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.valpkull{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    max-width: 100%;
+    margin: 25px 0;
+    padding: 25px;
+}
+
+.valpkull article {
+    text-align: left;
+    padding: 25px;
+}
+
+.valpkull h3, h4 {
+    margin-bottom: 20px;
+}
+
+.valpkull article {
+    display: grid;
+    grid-template-columns: 50% auto;
+    gap: 25px;
+    align-items: start;
+}
+
+.valpkull:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+    transition: 0.5s;
+}
+
+.valpkull img {
+    max-width: 100%;
+}
+
+.valpkull a::after{
+    margin-top: 200px;
+}
+.valpkull a:hover{
+    color: red;
+    font-size: 0.9rem;
+}
+
+/* FOOTER */
+.footer {
+    width: 100%;
+    height: 175px;
+    background-color: #ECECEC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.footer-section {
+    display: inline;
+
+}
+
+.footer-logo h3 {
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.footer-media {
+    margin-bottom: 15px;
+}
+
+.footer h2 {
+    max-width: 75px;
+    display: inline;
+    margin: 0px 5px;
+}
+
+.footer-divider {
+    border-bottom: 1px solid black;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.footer-media a:hover {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+    transform: scale(1.3);
+}
+
+.footer-media .fa-brands:hover {
+    transform: scale(1.4);
+}
+
+@media(max-width: 390px){
+    .header-section{
+        margin: 50px 0px;
+    }
+    .navigation{
+        background-color: #fff;
+    }
+    .menu a{
+    padding: 0px 5px;    
+    font-size: 0.8rem;
+    }
+    section{
+        flex-direction: column;
+    }
+        .container{
+        width: 95%;
+    }
+
+    .articles {
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    .news-article {
+        margin: 25px 5px;
+        padding: 15px;
+    }
+
+
+    .about{
+        margin: 25px 0;
+        padding: 15px;
+    }
+    
+    .about-info{
+       flex-direction: column;
+    }
+    
+    .about-txt{
+        text-align: left;
+        padding: 25px;
+    }
+    
+    .about-txt h3 {
+        margin-bottom: 20px;
+    }
+    
+    .about-info img {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .table #snabbfakta{
+        padding: 0;
+    }
+    .form input{
+        width: 100%;
+    }
+
+    .hund {
+        margin: 15px 0;
+        padding: 15px;
+    }
+    
+    .hund-text {
+        padding: 15px;
+    }
+
+    .hund article {
+        grid-template-columns: auto;
+    }
+
+    .valpkull article {
+        grid-template-columns: auto;
+        padding: 15px;
+    }
+
+    .valpkull{
+        margin: 15px 0;
+        padding: 15px;
+    }
+    
+    iFrame{
+        width: 100%;
+        height: auto;
+    }
+
+    .blog-post {
+        flex-direction: column;
+    }
+    .blog-post img {
+        max-width: 100%;
+    }
+    .blog-post article {
+        padding: 15px;
+    }
+    .blog-post .signee {
+        text-align: center;
+    }
+}
+

@@ -9,6 +9,8 @@
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="jquery.js"></script>
     <title>Gråsidingens Kennel</title>
 </head>
 
@@ -23,7 +25,11 @@
                     <h1><a href="./index.html"> Gråsidingens Kennel</a></h1>
                 </div>
                 <div class="menu-container">
-                    <ul class="menu">
+                    <div class="toggle">
+                        <h2><i class="fa-solid fa-bars hamburger " id="hamburger" onclick="toggle()"></i></h2>
+<!--                         <h2><i class="fa-solid fa-xmark close " onclick="toggle()"></i></h2>
+ -->                    </div>
+                    <ul class="menu hide" id="menu">
                         <li class="menu-item"><a href="./om.html">Om Oss</a></li>
                         <li class="menu-item"><a href="./hundar.html">Våra Hundar</a></li>
                         <li class="menu-item"><a href="./valpkullar.html">Valpkullar</a></li>
@@ -44,7 +50,7 @@
         <!-- DATE -->
         <section class="date-section">
             <div class="date-container">
-                <div class="date">Senast Uppdaterat: 2023-02-07</div>
+                <div class="date" id="date">Senast Uppdaterat: 2023-02-07</div>
             </div>
         </section>
 
@@ -119,6 +125,8 @@
             </div>
         </footer>
     </div>
+    <script src="./script.js"></script>
+
 </body>
 
 </html>

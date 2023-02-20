@@ -36,6 +36,8 @@ section {
     background-color: #fff;
     padding: 50px 0px;
     z-index: 10;
+    position: absolute;
+    top: 0;
 }
 
 .sticky {
@@ -141,24 +143,26 @@ a {
 /* NEWS ARTICLE */
 
 .articles {
-    display: grid;
-    grid-template-columns: 50% 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .news-article {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin: 25px 15px;
     padding: 25px;
+    width: 80%;
 }
 
-.news-article:hover {
+/* .news-article:hover {
     cursor: pointer;
     transform: scale(1.05);
     transition: 0.5s;
-}
+} */
 
 .news-article img {
-    max-width: 100%;
+    max-width: 75%;
     background-position: center;
 }
 
@@ -295,20 +299,50 @@ a {
 
 /* OM OSS */
 
-.about{
+.about {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     max-width: 100%;
     margin: 25px 0;
     padding: 25px;
 }
 
-.about-info{
+.btns{
+display: flex;
+justify-content: flex-start;
+align-items: center;
+}
+
+.hide-btn,
+.show-btn {
+    height: 35px;
+    width: 80px;
+    background-color: #5f1eb4;
+    color: #cfcfcf;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    margin: 25px 15px;
+}
+
+.hide-btn:hover,
+.show-btn:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    background-color: #47138c;
+}
+
+.hide-btn:active,
+.show-btn:active {
+    background-color: #524e58;
+}
+
+.about-info {
     display: flex;
     justify-content: center;
     align-items: flex-start;
 }
 
-.about-txt{
+.about-txt {
     text-align: left;
     padding: 25px;
 }
@@ -321,7 +355,7 @@ a {
     max-width: 50%;
 }
 
-.contact{
+.contact {
     max-width: 100%;
     margin: 25px 0;
     padding: 25px;
@@ -338,34 +372,35 @@ a {
 
 }
 
-.info .name{
+.info .name {
     font-weight: 600;
 }
 
-.about h4{
+.about h4 {
     text-align: left;
 }
 
-#snabbfakta{
+#snabbfakta {
     max-width: 100%;
     padding-left: 25px;
 }
 
-.table{
+.table {
     margin: 0px 0px;
 }
 
-th{
+th {
     text-align: left;
     width: 125px;
     border: #000 solid 1px;
 }
 
-tbody{
+tbody {
     text-align: left;
     border: #000 solid 1px;
 }
-td{
+
+td {
     border: #000 solid 1px;
 }
 
@@ -380,36 +415,38 @@ td{
     padding: 25px;
     text-align: left;
 }
-.form-info{
+
+.form-info {
     font-style: italic;
     font-size: 12px;
     margin-bottom: 20px;
 }
 
-.form label{
+.form label {
     margin: 0px 0px;
     padding: 0px 0px;
     font-weight: 500;
 }
 
-.form input{
+.form input {
     width: 50%;
     height: 30px;
     color: #cfcfcf;
     border-radius: 5px;
     border: none;
-    padding-left:10px ;
+    padding-left: 10px;
     margin-bottom: 15px;
 }
 
-.form #button{
+.form #button {
     height: 50px;
     width: 100px;
     background-color: #5f1eb4;
 }
-.form #button:hover{
+
+.form #button:hover {
     cursor: pointer;
-    transform: scale(1.1) ;
+    transform: scale(1.1);
     background-color: #47138c;
 }
 
@@ -426,7 +463,7 @@ td{
     margin-bottom: 20px;
 }
 
-.valpkull{
+.valpkull {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     max-width: 100%;
     margin: 25px 0;
@@ -438,7 +475,8 @@ td{
     padding: 25px;
 }
 
-.valpkull h3, h4 {
+.valpkull h3,
+h4 {
     margin-bottom: 20px;
 }
 
@@ -459,10 +497,11 @@ td{
     max-width: 100%;
 }
 
-.valpkull a::after{
+.valpkull a::after {
     margin-top: 200px;
 }
-.valpkull a:hover{
+
+.valpkull a:hover {
     color: red;
     font-size: 0.9rem;
 }
@@ -480,7 +519,6 @@ td{
 
 .footer-section {
     display: inline;
-
 }
 
 .footer-logo h3 {
@@ -515,62 +553,253 @@ td{
     transform: scale(1.4);
 }
 
-@media(max-width: 390px){
-    .header-section{
-        margin: 50px 0px;
-    }
-    .navigation{
-        background-color: #fff;
-    }
-    .menu a{
-    padding: 0px 5px;    
-    font-size: 0.8rem;
-    }
-    section{
-        flex-direction: column;
-    }
-        .container{
-        width: 95%;
+/* slideshow */
+
+.articles {
+    position: relative;
+}
+
+.news-article {
+    display: none;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: #47138c;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: #cfcfcf;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+.hamburger {
+    display: none;
+}
+
+.close {
+
+    display: none;
+}
+
+
+/* TIMER */
+.timer-container{
+    text-align: center;
+    margin-top: 15px;
+}
+.timer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.timer-render{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dagar, .timmar, .minuter, .sekunder{
+    margin: 0px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #47138c;
+}
+.timer-render h1 {
+}
+.timer-render h5 {
+}
+
+
+
+@keyframes fade {
+    from {
+        opacity: .4
     }
 
-    .articles {
-        display: grid;
-        grid-template-columns: auto;
+    to {
+        opacity: 1
+    }
+}
+
+@media(max-width: 390px) {
+    .header-section {
+        margin: 10px 0px;
+        padding: 10px 0px;
+        display: block;
+    }
+
+    .navigation {
+        background-color: #fff;
+        display: block;
+        padding: 10px 10px;
+    }
+
+    .menu a {
+        padding: 0px 5px;
+        font-size: 1.5rem; 
+    }
+
+    .menu-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 0px;
+        overflow: auto;
+        height: auto;
+    }
+
+    .menu-container li {
+        display: block;
+        margin: 40px 0px;
+        padding: 0;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .btns{
+        justify-content: center;
+        }
+
+    .hero-section {
+        width: 100%;
+        height: auto;
+        margin-top: 80px;
+    }
+
+    .date-section .date-container .date {
+        text-align: center;
+    }
+
+    .dagar, .timmar, .minuter, .sekunder{
+        margin: 0px 10px;
+
+    }
+
+    .toggle {
+        display: block;
+        width: 100%;
+    }
+
+    .hamburger {
+        width: 50px;
+        padding: 10px;
+        display: block;
+    }
+
+    .hamburger:active{
+        transform: rotate(90deg);
+    }
+
+    .close {
+        width: 50px;
+        padding: 10px;
+        display: block;
+    }
+
+    h2 i {
+        margin-left: 45%;
+    }
+.news-section .container h2{
+    margin-top: 0px;
+}
+
+    .hamburger,
+    .close:hover {
+        cursor: pointer;
+        color: #5f1eb4;
+    }
+
+    section {
+        flex-direction: column;
+    }
+
+    .container {
+        width: 100%;
     }
 
     .news-article {
-        margin: 25px 5px;
-        padding: 15px;
+        margin: 25px 0px;
+        padding: 25px 0px;
     }
 
-
-    .about{
+    .about {
         margin: 25px 0;
         padding: 15px;
     }
-    
-    .about-info{
-       flex-direction: column;
+
+    .about-info {
+        flex-direction: column;
     }
-    
-    .about-txt{
+
+    .about-txt {
         text-align: left;
         padding: 25px;
     }
-    
+
     .about-txt h3 {
         margin-bottom: 20px;
     }
-    
+
     .about-info img {
         max-width: 100%;
         margin-bottom: 20px;
     }
 
-    .table #snabbfakta{
+    .table #snabbfakta {
         padding: 0;
     }
-    .form input{
+
+    .form input {
         width: 100%;
     }
 
@@ -578,7 +807,7 @@ td{
         margin: 15px 0;
         padding: 15px;
     }
-    
+
     .hund-text {
         padding: 15px;
     }
@@ -592,44 +821,64 @@ td{
         padding: 15px;
     }
 
-    .valpkull{
+    .valpkull {
         margin: 15px 0;
         padding: 15px;
     }
-    
-    iFrame{
+
+    iFrame {
         width: 100%;
         height: auto;
+    }
+
+    .blog-intro h2 {
+        margin-top: 50px;
     }
 
     .blog-post {
         flex-direction: column;
     }
+
     .blog-post img {
         max-width: 100%;
     }
+
     .blog-post article {
         padding: 15px;
     }
+
     .blog-post .signee {
         text-align: center;
+    }
+
+    .footer-media {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .prev,
+    .next {
+        padding: 5px;
     }
 }
 
 /* PDF print */
-@media print{
-    iFrame{
-        display: none;
-    }
-    .menu-container{
+@media print {
+    iFrame {
         display: none;
     }
 
-    .valpkull{
+    .menu-container {
+        display: none;
+    }
+
+    .valpkull {
         page-break-before: always;
         padding: 10px;
         margin: 10px;
     }
+
     .container {
         width: 100%;
         padding: 5px 5px;

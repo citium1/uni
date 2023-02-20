@@ -9,6 +9,8 @@
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="jquery.js"></script>
     <title>Gråsidingens Kennel</title>
 </head>
 
@@ -16,6 +18,8 @@
     <!-- WRAP THE FULL PAGE -->
     <div class="page-wrapper">
 
+        <!-- MOBILE MENUE -->
+        <div class="mobile-menu"></div>
         <!-- HEADER -->
         <section class="header-section sticky">
             <nav class="navigation">
@@ -23,31 +27,46 @@
                     <h1>Gråsidingens Kennel</h1>
                 </div>
                 <div class="menu-container">
-                    <ul class="menu">
-                        <li class="menu-item"><a href="./om.html">Om Oss</a></li>
+                    <div class="toggle">
+                        <h2><i class="fa-solid fa-bars hamburger " id="hamburger" onclick="toggle()"></i></h2>
+                 </div>
+                    <ul class="menu hide" id="menu">
+                        <li class="menu-item" ><a href="./om.html">Om Oss</a></li>
                         <li class="menu-item"><a href="./hundar.html">Våra Hundar</a></li>
                         <li class="menu-item"><a href="./valpkullar.html">Valpkullar</a></li>
                         <li class="menu-item"><a href="./blogg.html">Blogg</a></li>
                     </ul>
+                        
                 </div>
             </nav>
         </section>
+
+        
+        
         <!-- HERO -->
         
         <div class="hero-section">
             <div class="hero-container">
                 <img src="./img/hero.jpeg" alt="hero-image">
             </div>
+            
 
         </div>
 
         <!-- DATE -->
         <section class="date-section">
             <div class="date-container">
-                <div class="date">Senast Uppdaterat: 2023-02-07</div>
+                <div class="date" id="date">Senast Uppdaterat: 2023-02-07</div>
             </div>
         </section>
 
+        <!-- TIMER -->
+        <div class="timer-area">
+            <div class="timer-container">
+                <h4>Tid tills nästa valpkull</h4>
+              <div class="timer" id="timer">
+              </div>
+        </div>
         <!-- NEWS -->
         <section class="news-section">
             <div class="container">
@@ -58,27 +77,58 @@
                 </div>
 
                 <!-- Article 1 -->
-                <div class="articles">
-                <div class="news-article">
+                 <div class="articles">
+
+                 <div class="news-article">
                 <img src="./img/news1.jpeg" alt="news-img">
                 <article>
                     <h3>Nyhet 1</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor fugiat molestias eos! Expedita sunt sapiente non, tempora veniam voluptas dolores ex a eum adipisci vel, doloribus quisquam. Fugit pariatur sed dolor, corporis debitis aliquam totam praesentium adipisci exercitationem officia minima!</p>
                 </article>
-                </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>   
 
                  <!-- Article 2 -->
-                 <div class="news-article">
+                   <div class="news-article">
                     <img src="./img/news2.jpeg" alt="news-img">
                     <article>
                         <h3>Nyhet 2</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor fugiat molestias eos! Expedita sunt sapiente non, tempora veniam voluptas dolores ex a eum adipisci vel, doloribus quisquam. Fugit pariatur sed dolor, corporis debitis aliquam totam praesentium adipisci exercitationem officia minima!</p>
                     </article>
-                    </div>
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    </div>  
 
+                     <!-- Article 3 -->
+                   <div class="news-article">
+                    <img src="./img/news3.jpeg" alt="news-img">
+                    <article>
+                        <h3>Nyhet 4</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque culpa sint aliquam officiis quidem repudiandae beatae repellat! Explicabo error numquam maxime est fuga labore dolores recusandae eius, quae commodi pariatur, dolor obcaecati accusantium magnam. Perspiciatis, iste dicta eaque, expedita incidunt quia cum exercitationem quibusdam consequuntur nesciunt neque id ducimus esse.</p>
+                    </article>
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    </div> 
 
+                      <!-- Article 4 -->
+                   <div class="news-article">
+                    <img src="./img/news4.jpeg" alt="news-img">
+                    <article>
+                        <h3>Nyhet 3</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque culpa sint aliquam officiis quidem repudiandae beatae repellat! Explicabo error numquam maxime est fuga labore dolores recusandae eius, quae commodi pariatur, dolor obcaecati accusantium magnam. Perspiciatis, iste dicta eaque, expedita incidunt quia cum exercitationem quibusdam consequuntur nesciunt neque id ducimus esse.</p>
+                    </article>
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    </div> 
 
                 </div>
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                  </div>
             </div>
 
         </section>
@@ -104,6 +154,8 @@
             </div>
         </footer>
     </div>
+    <script src="./script.js"></script>
+
 </body>
 
 </html>

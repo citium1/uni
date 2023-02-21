@@ -65,7 +65,6 @@ document.getElementById("date").innerHTML = `Senast uppdaterat: ${y}-${month}-${
 
 function focusFunction(x) {
     x.style.background = "#b58de8";
-    console.log(x)
   }
 
 /* Slideshow ------------------------------------------- */
@@ -73,13 +72,12 @@ function focusFunction(x) {
 let slideIndex = 1;
 showSlides(slideIndex);
 
-// Next/previous controls
+// Next/previous arrows
 function plusSlides(n) {
     showSlides(slideIndex += n);
-
 }
 
-// Thumbnail image controls
+// dotts image controls
 function currentSlide(n) {
     showSlides(slideIndex = n);
 }
@@ -88,6 +86,7 @@ function showSlides(n) {
     let i;
     let slides = document.getElementsByClassName("news-article");
     let dots = document.getElementsByClassName("dot");
+
     if (n > slides.length) { slideIndex = 1 }
     if (n < 1) { slideIndex = slides.length }
     for (i = 0; i < slides.length; i++) {
@@ -100,27 +99,18 @@ function showSlides(n) {
     dots[slideIndex - 1].className += " active";
 }
 
-/* COUNTER --------------------------------------- */
+/* Timer --------------------------------------- */
 
 class CountDown {
-    constructor(expiredDate, onRender, onComplete) {
+    constructor(expiredDate, onRender) {
         this.setExpiredDate(expiredDate);
         this.onRender = onRender;
-        this.onComplete = onComplete;
     }
 
     setExpiredDate(expiredDate) {
         const currentTime = new Date().getTime();
         this.timeRemaining = expiredDate.getTime() - currentTime;
-        this.timeRemaining > 0 ?
-            this.start() :
-            this.complete();
-    }
-
-    complete() {
-        if (typeof this.onComplete === 'function') {
-            onComplete();
-        }
+            this.start();
     }
 
     getTime() {
@@ -132,33 +122,21 @@ class CountDown {
         }
     }
 
-
     update() {
         if (typeof this.onRender === 'function') {
             this.onRender(this.getTime());
         }
-
     }
 
     start() {
         this.update();
-
         const intervalId = setInterval(() => {
             this.timeRemaining -= 1000;
-
-            if (this.timeRemaining < 0) {
-                complete();
-
-                clearInterval(intervalId);
-            } else {
-                this.update();
-            }
+        this.update();
         }, 1000);
     }
 }
 
-
-document.getElementById("date").innerHTML = `Senast uppdaterat: ${y}-${month}-${d}`;
 
 const app = document.getElementById("timer");
 
@@ -195,8 +173,6 @@ const render = (time) => {
        <h5>Sekunder</5>
    </div>
 </div>`
-
-
 };
 
 const countDownTimer = new CountDown(
